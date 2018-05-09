@@ -7,21 +7,15 @@ public class UIHandler : MonoBehaviour {
 
 	public Button menuButton, startButton, pauseButton, resetButton;
 	public Toggle toggleForLinearStand, toggleForNonLinearStand;
-	public GameObject panel,startButtonObject, pauseButtonObject, resetButtonObject;
+	public GameObject menuPanel;
 	// Use this for initialization
 
 
 	public void onMenuButtonClick(){
-		if (panel.activeSelf) {
-			panel.SetActive (false);
-			startButtonObject.SetActive (false);
-			pauseButtonObject.SetActive (false);
-			resetButtonObject.SetActive (false);
+		if (menuPanel.activeSelf) {
+			menuPanel.SetActive (false);
 		} else {
-			panel.SetActive (true);
-			startButtonObject.SetActive (true);
-			pauseButtonObject.SetActive (true);
-			resetButtonObject.SetActive (true);
+			menuPanel.SetActive (true);
 		}
 	}
 
