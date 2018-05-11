@@ -6,32 +6,32 @@ using UnityEngine.UI;
 public class UIHandler : MonoBehaviour {
 
 	public Button menuButton, startButton, pauseButton, resetButton;
-	public Toggle toggleForLinearStand, toggleForNonLinearStand;
-	public GameObject menuPanel;
-	// Use this for initialization
+	public Dropdown modelType;
+	public GameObject menuPanel, additionalPlummet, linearPanel;
 
+	void Start (){
+		additionalPlummet.SetActive (true);
+	}
 
 	public void onMenuButtonClick(){
 		if (menuPanel.activeSelf) {
 			menuPanel.SetActive (false);
+			linearPanel.SetActive (false);
 		} else {
 			menuPanel.SetActive (true);
+			if (modelType.value == 0)
+				linearPanel.SetActive (true);
 		}
 	}
 
-	public void onLinearToggleCheck(){
-		if (toggleForLinearStand.isOn)
-			toggleForNonLinearStand.interactable = false;
-		
-		else
-			toggleForNonLinearStand.interactable = true;
-	}
-
-	public void onNonLinearToggleCheck(){
-		if (toggleForNonLinearStand.isOn)
-			toggleForLinearStand.interactable = false;
-		else
-			toggleForLinearStand.interactable = true;
+	public void onValueChange(){
+		if (modelType.value == 1) {
+			additionalPlummet.SetActive (false);
+			linearPanel.SetActive (false);
+		} else {
+			additionalPlummet.SetActive (true);
+			linearPanel.SetActive (true);
+		}
 	}
 		
 }
