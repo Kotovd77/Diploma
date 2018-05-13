@@ -7,7 +7,7 @@ public class UIHandler : MonoBehaviour {
 
 	public Button menuButton, startButton, pauseButton, resetButton;
 	public Dropdown modelType;
-	public GameObject menuPanel, additionalPlummet, linearPanel;
+	public GameObject  menuPanel, additionalPlummet, linearPanel, deltaPanel, gammaPanel;
 
 	void Start (){
 		additionalPlummet.SetActive (true);
@@ -19,20 +19,22 @@ public class UIHandler : MonoBehaviour {
 			linearPanel.SetActive (false);
 		} else {
 			menuPanel.SetActive (true);
-			if (modelType.value == 0)
-				linearPanel.SetActive (true);
-		}
-	}
-
-	public void onValueChange(){
-		if (modelType.value == 1) {
-			additionalPlummet.SetActive (false);
-			linearPanel.SetActive (false);
-		} else {
-			additionalPlummet.SetActive (true);
 			linearPanel.SetActive (true);
 		}
 	}
-		
-}
 
+	public void onValueChange ()
+	{
+		if ( modelType.value == 0) {
+			deltaPanel.SetActive (true);
+			additionalPlummet.SetActive (true);
+			gammaPanel.SetActive (true);
+		} 
+		if ( modelType.value == 1) {
+			deltaPanel.SetActive (false);
+			additionalPlummet.SetActive (false);
+			gammaPanel.SetActive (false);
+		}
+
+	}
+}

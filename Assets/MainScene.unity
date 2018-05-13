@@ -779,6 +779,8 @@ MonoBehaviour:
   menuPanel: {fileID: 432125315}
   additionalPlummet: {fileID: 63161137}
   linearPanel: {fileID: 1685227224}
+  deltaPanel: {fileID: 273138075}
+  gammaPanel: {fileID: 1394012753}
 --- !u!1 &242718073
 GameObject:
   m_ObjectHideFlags: 0
@@ -3759,7 +3761,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041D\u0430\u0447\u0430\u043B\u044C\u043D\u044B\u0439 \u0443\u0433\u043E\u043B"
+  m_Text: "\u041F\u043E\u0432\u043E\u0440\u043E\u0442 \u043E\u0441\u0438"
 --- !u!222 &1194369990
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6282,9 +6284,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   A_0: 0
   gamma: 0
+  omega: 0
   omega_0: 0
   omega_1: 0
   delta_0: 0
+  epsilon: 0
+  phi_c: 0
   initAngle: 0
   initAngleTMP: 0
   prevAngle: 0
@@ -6300,6 +6305,9 @@ MonoBehaviour:
   startTime: 0
   pauseTime: 0
   currTime: 0
+  startSpeed: 0
+  C1: 0
+  C2: 0
   pendulum: {fileID: 2057293730}
   sometmp: 0
   simulationType: {fileID: 1700630040}
